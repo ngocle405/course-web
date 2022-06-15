@@ -18,10 +18,19 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@env": ["src/environments/environment"],
+      "@shared/*": ["src/app/shared/*"],
+      "@cores/*": ["src/app/core/*"],
+      "@common-category/*": ["src/app/features/administration/common-category/*"],
+      "@area-category/*": ["src/app/features/administration/area-category/*"],
+      "@config-process/*": ["src/app/features/administration/config-process/*"],
+      "@organization-structure/*": ["src/app/features/organizations/organization-structure/*"],
+      "@work-location/*": ["src/app/features/organizations/work-location/*"],
+      "@on-leave/*": ["src/app/features/employees/on-leave/*"],
+      "@tasks/*": ["src/app/features/employees/tasks/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

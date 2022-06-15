@@ -1,0 +1,170 @@
+<style>
+  a {
+    color: #141ed2 !important;
+  }
+  .texta a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    line-height: 20px;
+    font-weight: 600;
+
+    font-size: 13px;
+    transition: all 0.3s linear;
+  }
+  .texta a:hover {
+    bottom: 1px !important;
+    color: #fb4390 !important;
+  }
+</style>
+
+<header id="navbar" role="banner" class="section">
+  <div class="container header-top header">
+    <div class="row header-top">
+      <div class="navbar-header col-sm-3">
+        <a class="logo navbar-btn pull-left" [routerLink]="['/mb-ageas/dashboard']" title="Trang chủ">
+          <img src="../../assets/images/mbal-logo1.png" alt="Trang chủ" />
+        </a>
+      </div>
+      <div class="col-sm-9">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-collapse collapse row">
+          <div class="main-menu">
+            <nav role="navigation">
+              <ul class="menu nav navbar-nav">
+                <li class="first leaf texta">
+                  <a [routerLink]="['/mb-ageas/dashboard']" title="" class="">Trang chủ</a>
+                </li>
+                <li class="expanded dropdown -nav"></li>
+                <li class="first leaf texta">
+                  <a [routerLink]="['/mb-ageas/introduce/list']">Giới thiệu</a>
+                </li>
+                <li class="first leaf texta">
+                  <a [routerLink]="['/mb-ageas/course/list']">Khóa học</a>
+                </li>
+                <li class="first leaf texta">
+                  <a data-target="#">Chương trình Đào tạo</a>
+                </li>
+                <li class="first leaf texta">
+                  <a [routerLink]="['/mb-ageas/teacher/list']">Giảng viên</a>
+                </li>
+                <li class="first leaf texta">
+                  <a [routerLink]="['/mb-ageas/new/list']">Tin tức</a>
+                </li>
+                <li class="last leaf texta">
+                  <a>Liên hệ</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<router-outlet></router-outlet>
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="region region-footer">
+        <section id="block-block-23" class="block block-block col-xs-12 col-sm-3 footer-col address clearfix">
+          <div class="block-content">
+            <p><strong>TP.HCM</strong></p>
+            <p>&nbsp;</p>
+            <p>212-214 Nguyễn Đình Chiểu, Q.3, TP.HCM</p>
+            <p>Tel: 1800 1779</p>
+            <p>
+              E-mail:
+              <a
+                ><span class="__cf_email__" data-cfemail="7011000415131842301100021f040211191e5e131f1d"
+                  >mbageas@gmail.com</span
+                ></a
+              >
+            </p>
+            <p>-------------------</p>
+            <p><strong>HÀ NỘI</strong></p>
+            <p>&nbsp;</p>
+            <p>21 Cát Linh, Phường Cát Linh, Q. Đống Đa, Hà Nội</p>
+            <p>Tel: 1800 1147</p>
+            <p>
+              E-mail:
+              <a
+                ><span class="__cf_email__" data-cfemail="5938292d3c3a316a1938292b362d2b383037773a3634"
+                  >mbageas@gmail.com</span
+                ></a
+              >
+            </p>
+            <p>&nbsp;</p>
+            <p>1 Phạm Huy Thông, Q. Ba Đình, Hà Nội</p>
+            <p>Tel: 1800 1141</p>
+            <p>
+              E-mail:
+              <a
+                ><span class="__cf_email__" data-cfemail="1170616574727920517061637e656370787f3f727e7c"
+                  >mbageas@gmail.com</span
+                ></a
+              >
+            </p>
+            <p>&nbsp;</p>
+          </div>
+        </section>
+        <section id="block-block-24" class="block block-block col-xs-12 col-sm-3 footer-col menu clearfix">
+          <h2 class="block-title">Danh mục</h2>
+          <div class="block-content">
+            <ul>
+              <li><a>Trang chủ</a></li>
+              <li><a href="#">Giới thiệu</a></li>
+              <li><a href="#">Chương trình đào tạo</a></li>
+              <li><a href="#">Tuyển sinh</a></li>
+              <li><a href="#">Tin tức</a></li>
+              <li><a href="#">Triển lãm</a></li>
+              <li><a href="">Liên hệ</a></li>
+            </ul>
+          </div>
+        </section>
+        <section id="block-block-25" class="block block-block col-xs-12 col-sm-3 footer-col follow clearfix">
+          <h2 class="block-title">Theo dõi MB Ageas</h2>
+          <div class="block-content">
+            <p>
+              <a href="#" target="_blank"><img src="" width="38" height="38" /></a>
+              <a target="_blank"
+                ><img
+                  src="./assets/pages/sites/all/themes/aptech_news_2/images/youtube_icon.png"
+                  width="38"
+                  height="38" /></a
+              >&nbsp;
+            </p>
+          </div>
+        </section>
+        <section id="block-block-34" class="block block-block col-xs-12 col-sm-3 footer-col contact clearfix">
+          <h2 class="block-title">VỀ MB Ageas</h2>
+          <div class="block-content">
+            <p>
+              Với kinh nghiệm 34 năm trong lĩnh vực đào tạo Công Nghệ Thông Tin (CNTT), MB Ageas chúng tôi tự hào là một
+              công ty đào tạo nghề nghiệp hàng đầu thế giới có trụ sở tại Mumbai, Ấn Độ. Có mặt trên hơn 40 quốc gia với
+              hơn 1.350 cơ sở, MB Ageas đã đào tạo cho hơn 6,8 triệu học viên trên toàn thế giới và hơn 100.000 lập
+              trình viên tại Việt Nam.
+            </p>
+            <p>"Chúng tôi không chạy theo công nghệ. MB Ageas luôn đón đầu công nghệ"</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="region region-copyright">
+        <section id="block-block-6" class="block block-block text-center col-sm-12 clearfix">
+          <div class="block-content">Copyright © 2016. MB Ageas - News All rights reserved</div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast></p-toast>

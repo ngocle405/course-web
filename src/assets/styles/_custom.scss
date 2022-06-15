@@ -1,0 +1,19 @@
+.pointer {
+  cursor: pointer;
+}
+.p-dialog-body {
+  margin: 0 !important;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+.title {
+  height: 20px;
+  left: 0px;
+  top: calc(50% - 20px / 2 - 212px);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #0b7cc3;
+}

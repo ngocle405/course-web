@@ -1,0 +1,15 @@
+<div class="p-dialog-content">
+  <span class="p-confirm-dialog-message">Are you sure that you want to proceed?</span>
+</div>
+
+<div class="p-dialog-footer">
+  <button
+    (click)="confirm(true)"
+    pButton
+    label="Yes"
+    class="btn btn-default"
+    icon="pi pi-check"
+    class="p-mr-2"
+  ></button>
+  <button (click)="confirm(false)" pButton label="No" icon="pi pi-times" class="p-button-danger"></button>
+</div>

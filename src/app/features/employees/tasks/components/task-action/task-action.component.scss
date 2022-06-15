@@ -1,0 +1,44 @@
+:host {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.custom-marker {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+.info-approver {
+  background-color: #ccc;
+}
+
+::ng-deep {
+  .customized-timeline {
+    .p-timeline-event:nth-child(even) {
+      flex-direction: row !important;
+
+      .p-timeline-event-content {
+        text-align: left !important;
+      }
+    }
+
+    .p-timeline-event-content {
+      margin-bottom: 10px;
+    }
+
+    .p-timeline-event-content,
+    .p-timeline-event-opposite {
+      line-height: 1;
+    }
+
+    .p-timeline-event-opposite {
+      flex: 0;
+    }
+  }
+}

@@ -1,0 +1,217 @@
+<div class="layout-topbar">
+  <div class="layout-topbar-wrapper">
+    <div class="layout-topbar-left">
+      <!-- <div class="layout-topbar-logo-wrapper">
+        <a href="#" class="layout-topbar-logo"
+          ><img src="assets/layout/images/logo-mirage@2x.png" alt="mirage-layout" /><span class="app-name"
+            >Mirage</span
+          ></a
+        >
+      </div>
+      <a href="#" class="sidebar-menu-button"><i class="pi pi-bars"></i></a
+      ><a href="#" class="megamenu-mobile-button"><i class="pi pi-align-right megamenu-icon"></i></a
+      ><a href="#" class="topbar-menu-mobile-button"><i class="pi pi-ellipsis-v"></i></a>
+      <div class="layout-megamenu-wrapper">
+        <a href="#" class="layout-megamenu-button"><i class="pi pi-comment"></i> Mega Menu </a>
+        <ul class="layout-megamenu">
+          <li>
+            <a href="#">JavaServer Faces <i class="pi pi-angle-down"></i></a>
+            <ul>
+              <li class="active-row">
+                <i class="pi pi-circle-on"></i
+                ><span
+                  ><h5>PrimeFaces</h5>
+                  <span>UI Components for JSF</span></span
+                >
+              </li>
+              <li>
+                <i class="pi pi-circle-on"></i
+                ><span
+                  ><h5>Premium Templates</h5>
+                  <span>UI Components for JSF</span></span
+                >
+              </li>
+              <li>
+                <i class="pi pi-circle-on"></i
+                ><span
+                  ><h5>Extensions</h5>
+                  <span>UI Components for JSF</span></span
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Angular <i class="pi pi-angle-down"></i></a>
+            <ul>
+              <li>
+                <i class="pi pi-circle-on"></i
+                ><span
+                  ><h5>PrimeNG</h5>
+                  <span>UI Components for Angular</span></span
+                >
+              </li>
+              <li>
+                <i class="pi pi-circle-on"></i
+                ><span
+                  ><h5>Premium Templates</h5>
+                  <span>UI Components for Angular</span></span
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">React <i class="pi pi-angle-down"></i></a>
+            <ul>
+              <li>
+                <i class="pi pi-circle-on"></i
+                ><span
+                  ><h5>PrimeReact</h5>
+                  <span>UI Components for React</span></span
+                >
+              </li>
+              <li class="active-row">
+                <i class="pi pi-circle-on"></i
+                ><span
+                  ><h5>Premium Templates</h5>
+                  <span>UI Components for React</span></span
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div> -->
+    </div>
+    <div class="layout-topbar-right fadeInDown">
+      <ul class="layout-topbar-actions">
+        <li class="topbar-item profile-item">
+          <a href="#" (click)="$event.preventDefault()"><i class="topbar-icon pi pi-bell"></i></a>
+          <a href="#" (click)="$event.preventDefault()">
+            <span class="profile-image-wrapper">|</span>
+            <span (click)="op.toggle($event)" class="profile-info-wrapper"
+              ><h3>{{ fullName || 'Admin' }}</h3></span
+            >
+          </a>
+          <p-overlayPanel #op [style]="{ width: '200px' }">
+            <ng-template pTemplate>
+              <div class="pointer" (click)="logout()"><a href="javascript:void(0)">Logout</a></div>
+            </ng-template>
+          </p-overlayPanel>
+          <!-- <ul class="fadeInDown">
+            <li class="layout-submenu-header"><h1>Deals</h1></li>
+            <li class="deals">
+              <ul>
+                <li>
+                  <img src="assets/layout/images/topbar/deal-icon-sapphire.png" alt="mirage-layout" width="35" />
+                  <div class="menu-text">
+                    <p>Sapphire</p>
+                    <span>Angular</span>
+                  </div>
+                  <i class="pi pi-angle-right"></i>
+                </li>
+                <li>
+                  <img src="assets/layout/images/topbar/deal-icon-roma.png" alt="mirage-layout" width="35" />
+                  <div class="menu-text">
+                    <p>Roma</p>
+                    <span>Minimalism</span>
+                  </div>
+                  <i class="pi pi-angle-right"></i>
+                </li>
+                <li>
+                  <img src="assets/layout/images/topbar/deal-icon-babylon.png" alt="mirage-layout" width="35" />
+                  <div class="menu-text">
+                    <p>Babylon</p>
+                    <span>Powerful</span>
+                  </div>
+                  <i class="pi pi-angle-right"></i>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <img src="assets/layout/images/topbar/deal-icon-harmony.png" alt="mirage-layout" width="35" />
+                  <div class="menu-text">
+                    <p>Harmony</p>
+                    <span>USWDS</span>
+                  </div>
+                  <i class="pi pi-angle-right"></i>
+                </li>
+                <li>
+                  <img src="assets/layout/images/topbar/deal-icon-prestige.png" alt="mirage-layout" width="35" />
+                  <div class="menu-text">
+                    <p>Prestige</p>
+                    <span>Elegancy</span>
+                  </div>
+                  <i class="pi pi-angle-right"></i>
+                </li>
+                <li>
+                  <img src="assets/layout/images/topbar/deal-icon-ultima.png" alt="mirage-layout" width="35" />
+                  <div class="menu-text">
+                    <p>Ultima</p>
+                    <span>Material</span>
+                  </div>
+                  <i class="pi pi-angle-right"></i>
+                </li>
+              </ul>
+            </li>
+          </ul> -->
+        </li>
+        <!-- <li>
+          <a href="#" (click)="$event.preventDefault()" class="layout-rightpanel-button"
+            ><i class="pi pi-arrow-left"></i
+          ></a>
+        </li> -->
+      </ul>
+      <!-- <ul class="profile-mobile-wrapper">
+        <li class="topbar-item profile-item">
+          <a href="#"
+            ><span class="profile-image-wrapper"
+              ><img src="assets/layout/images/topbar/avatar-eklund.png" alt="mirage-layout" /></span
+            ><span class="profile-info-wrapper"
+              ><h3>Olivia Eklund</h3>
+              <span>Design</span></span
+            ></a
+          >
+          <ul class="fadeInDown">
+            <li class="profile-submenu-header">
+              <div class="performance">
+                <span>Weekly Performance</span
+                ><img src="assets/layout/images/topbar/asset-bars.svg" alt="mirage-layout" />
+              </div>
+              <div class="profile">
+                <img src="assets/layout/images/topbar/avatar-eklund.png" alt="mirage-layout" width="45" />
+                <h1>Olivia Eklund</h1>
+                <span>Design</span>
+              </div>
+            </li>
+            <li>
+              <i class="pi pi-list icon icon-1"></i>
+              <div class="menu-text">
+                <p>Tasks</p>
+                <span>3 open issues</span>
+              </div>
+              <i class="pi pi-angle-right"></i>
+            </li>
+            <li>
+              <i class="pi pi-shopping-cart icon icon-2"></i>
+              <div class="menu-text">
+                <p>Payments</p>
+                <span>24 new</span>
+              </div>
+              <i class="pi pi-angle-right"></i>
+            </li>
+            <li>
+              <i class="pi pi-users icon icon-3"></i>
+              <div class="menu-text">
+                <p>Clients</p>
+                <span>+80%</span>
+              </div>
+              <i class="pi pi-angle-right"></i>
+            </li>
+            <li class="layout-submenu-footer">
+              <button class="signout-button">Sign Out</button><button class="buy-mirage-button">Buy Mirage</button>
+            </li>
+          </ul>
+        </li>
+      </ul> -->
+    </div>
+  </div>
+</div>

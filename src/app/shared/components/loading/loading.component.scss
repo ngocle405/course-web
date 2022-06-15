@@ -1,0 +1,99 @@
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+// @keyframes play60 {
+//   0% {
+//     background-position: 0px 0px;
+//   }
+//   100% {
+//     background-position: -3600px 0px;
+//   }
+// }
+// .shapeshifter {
+//   animation-duration: 1.5s;
+//   animation-timing-function: steps(60);
+//   width: 60px;
+//   height: 61px;
+//   background-repeat: no-repeat;
+//   z-index: 9999;
+// }
+// .shapeshifter.play {
+//   animation-name: play60;
+//   animation-iteration-count: infinite;
+// }
+.block-loading {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+// .backdrop-loading--login {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   z-index: 50;
+//   background-color: #ffffff;
+// }
+
+.backdrop-loading--content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  background-color: #ffffff;
+  opacity: 0.1;
+}
+
+:host ::ng-deep .custom-spinner .p-progress-spinner-circle {
+  animation: custom-progress-spinner-dash 1.5s ease-in-out infinite,
+    custom-progress-spinner-color 6s ease-in-out infinite;
+}
+
+.custom-spinner {
+  z-index: 10000;
+}
+
+@keyframes custom-progress-spinner-color {
+  100%,
+  0% {
+    stroke: #00479d;
+  }
+  40% {
+    stroke: #00479d;
+  }
+  66% {
+    stroke: #00479d;
+  }
+  80%,
+  90% {
+    stroke: #00479d;
+  }
+}
+
+@keyframes custom-progress-spinner-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}

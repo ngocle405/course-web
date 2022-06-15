@@ -1,0 +1,53 @@
+<div [class]="classMenu" (mouseenter)="mouseEnterMenu()" (mouseleave)="mouseLeaveMenu()">
+  <div class="sidebar-logo">
+    <a href="#" (click)="$event.preventDefault(); onStaticMenu()" title="Toggle Menu" class="sidebar-pin">
+      <i [class]="isLock ? 'pi pi-lock' : 'pi pi-lock-open'"></i>
+    </a>
+    <a routerlink="/">
+      <img alt="logo" src="/assets/images/mbal-logo.png" />
+      <span class="app-name">BPM MBAL</span>
+    </a>
+  </div>
+  <div class="layout-menu-container">
+    <ul class="layout-menu">
+      <ng-container *ngFor="let item of items">
+        <ng-container
+          [ngTemplateOutlet]="item.children && item.children.length > 0 ? sub : noSub"
+          [ngTemplateOutletContext]="{ itemMenu: item }"
+        >
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
+</div>
+
+<ng-template #noSub let-itemMenu="itemMenu">
+  <li [class.active-menuitem]="itemMenu.active">
+    <a
+      (click)="$event.preventDefault(); activeMenuItem(itemMenu)"
+      [routerLink]="itemMenu.routerLink"
+      routerLinkActive="active-menuitem-routerlink"
+    >
+      <span class="menuitem-text">{{ itemMenu.label }}</span>
+      <i [class]="'layout-menuitem-icon pi pi-fw ' + itemMenu.icon"></i>
+    </a>
+  </li>
+</ng-template>
+<ng-template #sub let-itemMenu="itemMenu">
+  <li [class.active-menuitem]="itemMenu.active">
+    <a (click)="$event.preventDefault(); activeMenuItem(itemMenu)">
+      <span class="menuitem-text">{{ itemMenu.label }}</span>
+      <i class="pi pi-fw pi-angle-down layout-submenu-toggler"></i>
+      <i [class]="'layout-menuitem-icon pi pi-fw ' + itemMenu.icon"></i>
+    </a>
+    <ul *ngIf="itemMenu.active" [@toggleMenu]>
+      <ng-container *ngFor="let item of itemMenu.children">
+        <ng-container
+          [ngTemplateOutlet]="item.children?.length > 0 ? sub : noSub"
+          [ngTemplateOutletContext]="{ itemMenu: item }"
+        >
+        </ng-container>
+      </ng-container>
+    </ul>
+  </li>
+</ng-template>

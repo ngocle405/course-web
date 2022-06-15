@@ -1,0 +1,95 @@
+<div class="p-dialog-header px-0">
+  <span class="p-dialog-title">{{ title }}</span>
+  <div class="p-dialog-header-icons">
+    <button type="button" class="p-dialog-header-icon p-dialog-header-maximize p-link" (click)="cancel()">
+      <span class="p-dialog-header-close-icon pi pi-times"></span>
+    </button>
+  </div>
+</div>
+<div class="grid p-fluid p-dialog-body mt-2">
+  <div class="col-6" [formGroup]="form">
+    <div class="p-field">
+      <span class="p-float-label">
+        <input type="text" pInputText formControlName="code" />
+        <label for="inputtext">Mã vai trò<span style="color: red">*</span></label>
+      </span>
+      <f-errors [control]="form.get('code')"></f-errors>
+    </div>
+  </div>
+
+  <div class="col-6" [formGroup]="form">
+    <div class="p-field">
+      <span class="p-float-label">
+        <input type="text" pInputText formControlName="name" />
+        <label for="inputtext">Tên vai trò<span style="color: red">*</span></label>
+      </span>
+      <f-errors [control]="form.get('name')"></f-errors>
+    </div>
+  </div>
+  <div class="col-6" [formGroup]="form">
+    <div class="p-field">
+      <span class="p-float-label">
+        <input type="text" pInputText formControlName="createDate" />
+        <label for="inputtext">người tạo<span style="color: red">*</span></label>
+      </span>
+      <f-errors [control]="form.get('createDate')"></f-errors>
+    </div>
+  </div>
+  <div class="col-12" [formGroup]="form">
+    <div class="p-field">
+      <span class="p-float-label">
+        <p-calendar
+          [showTime]="true"
+          [readonlyInput]="true"
+          dateFormat="dd/mm/yy"
+          formControlName="updateDate"
+          [showIcon]="true"
+          inputId="icon"
+          appendTo="body"
+        >
+        </p-calendar>
+        <label for="inputtext">Ngày bắt đầu<span style="color: red">*</span></label>
+      </span>
+      <f-errors [control]="form.get('Ngày cập nhật')"></f-errors>
+    </div>
+  </div>
+  <div class="col-6" [formGroup]="form">
+    <div class="p-field">
+      <span class="p-float-label">
+        <input type="text" pInputText formControlName="description" />
+        <label for="inputtext">Mô tả<span style="color: red">*</span></label>
+      </span>
+      <f-errors [control]="form.get('description')"></f-errors>
+    </div>
+  </div>
+  <div class="col-6" [formGroup]="form">
+    <div class="p-field">
+      <span class="p-float-label">
+        <input type="text" pInputText formControlName="updateBy" />
+        <label for="inputtext">Người cập nhật<span style="color: red">*</span></label>
+      </span>
+    </div>
+  </div>
+  <div class="col-12" [formGroup]="form">
+    <div class="p-field">
+      <span class="p-float-label">
+        <p-calendar
+          [showTime]="true"
+          [readonlyInput]="true"
+          dateFormat="dd/mm/yy"
+          formControlName="updateDate"
+          [showIcon]="true"
+          inputId="icon"
+          appendTo="body"
+        >
+        </p-calendar>
+        <label for="inputtext">Ngày bắt đầu<span style="color: red">*</span></label>
+      </span>
+      <f-errors [control]="form.get('Ngày cập nhật')"></f-errors>
+    </div>
+  </div>
+</div>
+<div class="p-dialog-footer p-0 mt-3">
+  <button pButton *ngIf="screenType !== 2" (click)="save()" label="Lưu" icon="pi pi-check" class="p-mr-2"></button>
+  <button pButton (click)="cancel()" label="Đóng" icon="pi pi-times" class="p-button-danger"></button>
+</div>

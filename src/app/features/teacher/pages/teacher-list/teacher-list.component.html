@@ -1,0 +1,61 @@
+<div class="content card">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 mt-8 mb-5">
+        <h2 class="block-title text-center uppercase">Giảng viên</h2>
+        <h3 class="text-center">Giảng viên tại MB Ageas</h3>
+      </div>
+      <div class="region region-content">
+        <section id="block-system-main" class="block block-system clearfix">
+          <div class="block-content">
+            <div
+              class="view view-content-function view-id-content_function view-display-id-page_8 list-views row teacher product-of-st view-dom-id-234d5e71d431c491a3575cdb26127665"
+            >
+              <div class="view-header"></div>
+              <div class="view-content">
+                <div
+                  class="views-row views-row-1 views-row-odd views-row-first col-sm-4"
+                  *ngFor="let item of stateData"
+                >
+                  <div class="p-3 border-radius-style">
+                    <div class="views-field views-field-field-news-image">
+                      <div class="field-content">
+                        <a
+                          ><img
+                            typeof="foaf:Image"
+                            src="http://localhost:53421/upload/files/{{ item.image }}"
+                            width="125"
+                            height="150"
+                            alt=""
+                        /></a>
+                      </div>
+                    </div>
+                    <div class="views-field views-field-nothing">
+                      <span class="field-content">
+                        <div class="name-teacher">
+                          <a routerLink="/mb-ageas/teacher/description/{{ item.teacherId }}"
+                            >Giảng viên :{{ item.teacherName }}</a
+                          >
+                        </div>
+                        <div class="chuyenmon-teacher"><span>Chuyên môn: </span>{{ item.regular }}</div>
+                        <div class="talk">" {{ item.say }}"</div>
+                        <div class="view_more">
+                          <button
+                            class="btn-detail ml-7 mt-2"
+                            routerLink="/mb-ageas/teacher/description/{{ item.teacherId }}"
+                          >
+                            Xem thêm
+                          </button>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,219 @@
+// stylelint-disable
+$white: #fff !default;
+$gray-100: #eff2fe !default;
+$gray-200: #fbfbfd !default;
+$gray-300: #f0f0f3 !default;
+$gray-400: #ced4da !default;
+$gray-500: #e1e4ea !default;
+$gray-600: #505867 !default;
+$gray-700: #ececf2 !default;
+$gray-800: #f5f5fa !default;
+$gray-900: #8181a5 !default;
+$black: #000 !default;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
+  ),
+  $grays
+);
+
+$blue: #00479d !default;
+$indigo: #6610f2 !default;
+$purple: #9698d6 !default;
+$pink: #f5a0ba !default;
+$red: #ff808b !default;
+$orange: #fd7e14 !default;
+$yellow: #f4be5e !default;
+$green: #58cf8d !default;
+$teal: #2ce5f6 !default;
+$cyan: #17a2b8 !default;
+$danger: #ff0000 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    'blue': $blue,
+    'indigo': $indigo,
+    'purple': $purple,
+    'pink': $pink,
+    'red': $red,
+    'orange': $orange,
+    'yellow': $yellow,
+    'green': $green,
+    'teal': $teal,
+    'cyan': $cyan,
+    'white': $white,
+    'gray': $gray-600,
+    'gray-dark': $gray-800,
+  ),
+  $colors
+);
+
+$primary: $blue !default;
+$primary4: #e5edf5 !default;
+$primary5: #f2f6fa !default;
+
+$secondary: white !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+$font-size-base: 1.2rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * 0.875) !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+
+$h1-font-size: 3.2rem !default;
+$h2-font-size: 2.6rem !default;
+$h3-font-size: 2rem !default;
+$h4-font-size: 1.8rem !default;
+$h5-font-size: 1.6rem !default;
+$h6-font-size: 1.4rem !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+// $body-bg: #f5f5fa !default;
+$body-bg: #e6e6f3 !default;
+$body-color: #1c1d21 !default;
+
+$grid-gutter-width: 30px !default;
+
+$headings-margin-bottom: 1rem !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.41 !default;
+$headings-color: #1c1d21 !default;
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: 'Lato', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+  Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$font-family-helvetica: 'Lato', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+  Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+$fontFamily: $font-family-sans-serif !default;
+// stylelint-enable value-keyword-case
+
+$nav-link-color: #649db8 !default;
+$input-color: $headings-color !default;
+$input-border-color: $gray-400 !default;
+$input-border-width: 1px !default;
+
+$input-border-radius: 0px !default;
+
+$input-focus-bg: white !default;
+$input-height: 48px;
+
+$padding-component: 2rem;
+
+$color-red-error: rgb(185, 74, 72) !default;
+$color-green-success: #28a745;
+$color-grey-arrow: rgba(204, 204, 204, 0.2) !default;
+
+$width-default: 220px !default; // 3 960px-grid columns
+
+$zindex-select-dropdown: 1060 !default; // must be higher than a modal background (1050)
+
+//** Placeholder text color
+$input-color-placeholder: $gray-900 !default;
+$input-alt-color-placeholder: rgba(255, 255, 255, 0.5) !default;
+
+$input-padding-y-sm: 0.25rem !default;
+$input-padding-x-sm: 0.5rem !default;
+
+$input-padding-y-lg: 0.5rem !default;
+$input-padding-x-lg: 1rem !default;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y: 1rem !default;
+$input-btn-padding-x: 1.6rem !default;
+$input-btn-line-height: $line-height-base !default;
+
+$input-btn-focus-width: 0.2rem !default;
+//$input-btn-focus-color:       rgba($component-active-bg, .25) !default;
+//$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+$input-btn-padding-y-sm: 0.25rem !default;
+$input-btn-padding-x-sm: 0.5rem !default;
+$input-btn-line-height-sm: $line-height-base !default;
+
+$input-btn-padding-y-lg: 0.5rem !default;
+$input-btn-padding-x-lg: 1rem !default;
+$input-btn-line-height-lg: $line-height-base !default;
+
+$input-btn-border-width: 2px !default;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y: $input-btn-padding-y !default;
+$btn-padding-x: $input-btn-padding-x !default;
+$btn-line-height: $input-btn-line-height !default;
+
+$btn-padding-y-sm: $input-btn-padding-y-sm !default;
+$btn-padding-x-sm: $input-btn-padding-x-sm !default;
+$btn-line-height-sm: $input-btn-line-height-sm !default;
+
+$btn-padding-y-lg: $input-btn-padding-y-lg !default;
+$btn-padding-x-lg: $input-btn-padding-x-lg !default;
+$btn-line-height-lg: $input-btn-line-height-lg !default;
+
+$btn-border-width: $input-btn-border-width !default;
+
+$btn-font-weight: 900 !default;
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$btn-focus-width: $input-btn-focus-width !default;
+//$btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
+$btn-disabled-opacity: 0.65 !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
+
+$btn-link-disabled-color: $gray-600 !default;
+
+$btn-block-spacing-y: 0.5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: 8px !default;
+$btn-border-radius-lg: $btn-border-radius !default;
+$btn-border-radius-sm: $btn-border-radius !default;
+
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
+
+$border-radius: 8px;
+$border-radius-lg: 6px !default;
+$padding-horizontal-md: 7rem;
+$padding-horizontal-sm: 4rem;
+$border: $gray-300;
+$card-border-color: #eee;
+
+$hover-color: #475daa;
+$app-grey: #e9e9f1;
+$app-red: #fff2f3;
+$app-green: #f2fdf7;
+$app-yellow: #fef9ef;
+$app-blue: #eff2fe;
+$app-light-blue: #ecfcfe;

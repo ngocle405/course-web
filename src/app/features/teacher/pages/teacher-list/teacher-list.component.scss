@@ -1,0 +1,49 @@
+.block-title{
+    color: #141ed2 !important; 
+}
+.btn-detail{
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    text-transform: none;
+   
+    color: white;
+    border-radius: 5%;
+    border:2px solid #fb4390 ;
+    background-color: #fb4390 !important; 
+
+}
+.btn-detail:hover{
+    background-color: #141ed2 ; 
+
+}
+.border-radius-style{
+    border-radius: 5px;
+     border: 1px solid rgb(91, 197, 242)
+   }
+   a{
+    color: #141ed2 !important; 
+    text-decoration: none;
+   
+   } 
+   a:hover{
+    color: #fb4390 ;
+   }
+.texta a{
+   
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    
+    line-height: 20px;
+    font-weight: 600;
+    
+    font-size: 13px;
+    transition: all .3s linear;
+}
+.texta a:hover {
+    bottom: 1px !important;
+    color: #fb4390 !important;
+}

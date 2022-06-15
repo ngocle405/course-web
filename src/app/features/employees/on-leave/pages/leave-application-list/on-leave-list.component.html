@@ -1,0 +1,73 @@
+<div class="card">
+  <div class="grid">
+    <!-- <div class="p-md-3 p-lg-2">
+      <span class="p-float-label">
+        <input [(ngModel)]="params.ownerName" class="p-inputtext-sm" id="float-input" type="text" pInputText />
+        <label for="float-input">Người tạo đơn</label>
+      </span>
+    </div> -->
+    <div class="p-md-3 p-lg-2">
+      <span class="p-float-label">
+        <p-dropdown
+          class="p-inputtext-sm"
+          [options]="listStatus"
+          [(ngModel)]="params.status"
+          optionLabel="name"
+          optionValue="code"
+          appendTo="body"
+          [baseZIndex]="10000"
+          [autoZIndex]="false"
+          [autoDisplayFirst]="false"
+        ></p-dropdown>
+        <label for="float-input">Trạng thái</label>
+      </span>
+    </div>
+  </div>
+  <p-toolbar styleClass="px-0">
+    <div class="p-toolbar-group-left">
+      <p-button label="Tìm kiếm" (click)="search()" icon="pi pi-search" styleClass="p-button-success"> </p-button>
+    </div>
+    <div class="p-toolbar-group-right">
+      <!-- <button pButton (click)="viewCreate()" icon="pi pi-plus"></button> -->
+    </div>
+  </p-toolbar>
+  <p-table [value]="dataTable.content" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Mã nhân viên</th>
+        <th>Tên nhân viên</th>
+        <th>Ngày bắt đầu nghỉ</th>
+        <th>Ngày kết thúc nghỉ</th>
+        <th>Trạng thái</th>
+        <th>Lý do</th>
+        <th style="width: 100px" alignFrozen="right" pFrozenColumn>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-i="rowIndex">
+      <tr>
+        <td>{{ item.employeeCode }}</td>
+        <td>{{ item.employeeName }}</td>
+        <td>{{ item.startDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ item.endDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ item.status }}</td>
+        <td>{{ item.reason }}</td>
+
+        <td style="width: 100px" alignFrozen="right" pFrozenColumn>
+          <span class="pointer p-mr-2" (click)="viewDetail(item.id)">
+            <em class="las la-eye"></em>
+          </span>
+          <!-- <span *ngIf="currUser['code'] !== item.employeeCode" class="pointer p-mr-2" (click)="viewEdit(item.taskId)">
+            <em class="las la-pen"></em>
+          </span> -->
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-paginator
+    [showCurrentPageReport]="true"
+    [rows]="dataTable!.size"
+    [totalRecords]="dataTable!.totalElements"
+    [rowsPerPageOptions]="[10, 20, 30]"
+    (onPageChange)="pageChange($event)"
+  ></p-paginator>
+</div>

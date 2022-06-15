@@ -1,0 +1,152 @@
+<div class="card">
+  <div class="container">
+    <div class="grid flex">
+      <div class="col-8">
+        <div class="card form-view">
+          <h3 class="title">đăng ký trực tuyến</h3>
+          <p-image src="../../assets/images/tuyensinh.png" alt="" width="100%"></p-image>
+
+          <h4 class="title">Thông tin yêu cầu</h4>
+          <p>Các bạn điền thông tin đăng ký học theo biểu mẫu như sau:</p>
+          <div class="col-12">
+            <span class="ms-2">
+              <p class="ms-2">1. Nhập thông tin đầy đủ vào form đăng ký</p>
+              <p>2. Sau khi điền đầy đủ thông tin, nhấn nút <strong>“ĐĂNG KÝ”</strong> sẽ hiện ra thông tin xác nhận</p>
+              <p>3. Những dòng có dấu (<span style="color: red">*</span>) là thông tin bắt buộc</p>
+            </span>
+          </div>
+          <h3 class="title">thông tin đăng ký</h3>
+          <div class="col-12" [formGroup]="form">
+            <div class="p-field">
+              <span class="p-float-label">
+                <input
+                  pInputText
+                  class="p-inputtext-sm"
+                  formControlName="name"
+                  [baseZIndex]="10000"
+                  [autoZIndex]="false"
+                  [autoDisplayFirst]="false"
+                />
+                <label for="float-input">Họ và tên <span class="text-red">*</span></label>
+              </span>
+            </div>
+          </div>
+          <div class="col-12" [formGroup]="form">
+            <span class="p-float-label">
+              <input
+                pInputText
+                class="p-inputtext-sm"
+                formControlName="phone"
+                [baseZIndex]="10000"
+                [autoZIndex]="false"
+                [autoDisplayFirst]="false"
+              />
+              <label for="float-input" class="label-input">Số điện thoại <span class="text-red">*</span></label>
+            </span>
+          </div>
+          <div class="col-12" [formGroup]="form">
+            <span class="p-float-label">
+              <input
+                pInputText
+                class="p-inputtext-sm"
+                formControlName="email"
+                [baseZIndex]="10000"
+                [autoZIndex]="false"
+                [autoDisplayFirst]="false"
+              />
+              <label for="float-input" class="label-input">Địa chỉ email <span class="text-red">*</span></label>
+            </span>
+          </div>
+          <div class="col-12" [formGroup]="form">
+            <span class="p-float-label">
+              <p-dropdown
+                [options]="stateData!.listAddressCompany"
+                class="p-inputtext-sm"
+                formControlName="companyAddress"
+                optionLabel="name"
+                optionValue="value"
+              >
+              </p-dropdown>
+              <label for="float-input" class="label-input"> Cơ sở bạn muốn học<span class="text-red">*</span></label>
+            </span>
+          </div>
+          <div class="col-12" [formGroup]="form">
+            <span class="p-float-label">
+              <p-dropdown
+                [options]="stateData!.getCourseList"
+                class="p-inputtext-sm"
+                formControlName="courseId"
+                optionLabel="courseName"
+                optionValue="courseId"
+              >
+              </p-dropdown>
+              <label for="float-input" class="label-input"
+                >Đăng ký chương trình học<span class="text-red">*</span></label
+              >
+            </span>
+          </div>
+          <div class="col-12" [formGroup]="form">
+            <span class="p-float-label">
+              <p-dropdown
+                [options]="stateData!.listLevel"
+                class="p-inputtext-sm"
+                formControlName="level"
+                optionLabel="name"
+                optionValue="value"
+              >
+              </p-dropdown>
+              <label for="float-input" class="label-input">Trình độ<span class="text-red">*</span></label>
+            </span>
+          </div>
+          <div class="col-12" [formGroup]="form">
+            <span class="p-float-label">
+              <p-dropdown
+                [options]="stateData!.listKnow"
+                class="p-inputtext-sm"
+                formControlName="know"
+                optionLabel="name"
+                optionValue="value"
+              >
+              </p-dropdown>
+              <label for="inputtext" class="label-input">Bạn biết MB ageas qua<span class="text-red">*</span></label>
+            </span>
+          </div>
+          <div class="col-12" [formGroup]="form">
+            <span class="p-float-label">
+              <textarea [rows]="3" pInputTextarea formControlName="note" [autoResize]="true"></textarea>
+              <label for="float-input">Để lại lời nhắn<span class="text-red">*</span></label>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <div class="grid">
+            <h3 class="title col-12">bài viết mới nhất</h3>
+            <div class="col-12">
+              <div class="grid border-top-1 mt-2" *ngFor="let item of newList">
+                <div class="col-4">
+                  <p-image src="http://localhost:53421/upload/files/{{ item.image }}" alt="Image" width="70"></p-image>
+                </div>
+                <div class="col-8">
+                  <a class="no-underline" routerLink="/mb-ageas/new/description/{{ item.newId }}">{{ item.title }}</a>
+                  <br />
+                  <span>{{ item.createDate | date: 'dd/MM/yyyy' }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p-toolbar>
+        <ng-template pTemplate="left"> </ng-template>
+        <ng-template pTemplate="right">
+          <button pButton label="Nộp yêu cầu" (click)="save()" icon="pi pi-check" class="mr-2"></button>
+        </ng-template>
+      </p-toolbar>
+    </div>
+  </div>
+</div>

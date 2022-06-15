@@ -1,0 +1,94 @@
+# ===================================================================================================
+# TEMPLATING
+
+.template-project: &project
+  project: devops/auto-devops
+  ref: main
+
+include:
+  - file: Auto-DevOps.gitlab-ci.yml
+    << : *project
+  - file: Docker.gitlab-ci.yml
+    << : *project
+  - file: Npm.gitlab-ci.yml
+    << : *project
+  - file: EKS.gitlab-ci.yml
+    << : *project
+  - file: Sonarqube-Frontend.gitlab-ci.yml
+    << : *project
+
+# ===================================================================================================
+# TRIGGER BUILD AND DEPLOY
+
+# List of files that trigger redeployment.
+.changes: &redeployment
+- $DOCKERFILE
+- $SRC_DIR
+- package.json
+- tsconfig.*
+- karma.conf.js
+- angular.json
+
+.sonar-changes: &re-scan
+- $SRC_DIR
+- package.json
+- tsconfig.*
+- karma.conf.js
+- angular.json
+
+# ===================================================================================================
+# CODE QUALITY SCAN
+
+sonarqube-check:
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    # a little bit different from the above one
+    changes: *re-scan
+
+# ===================================================================================================
+# NPM BUILD
+
+artifact-build:
+  image: node:12
+  variables:
+    INSTALL_CMD: npm install
+    BUILD_CMD: npm run build:test
+    ARTIFACTS_PATH: dist/bpm-web
+  rules:
+  - if: $CI_COMMIT_BRANCH =~ /^(develop|uat|main)$/
+    changes: *redeployment
+
+# ===================================================================================================
+# DOCKER BUILD AND PUSH
+
+docker-build:
+  variables:
+    IMAGE_NAME: bpm/bpm-web
+  rules:
+  - if: $CI_COMMIT_BRANCH =~ /^(develop|uat|main)$/
+    changes: *redeployment
+
+# ===================================================================================================
+# DEPLOY TO EKS CLUSTER, EXCLUDING PROD
+
+k8s-deploy:
+  variables:
+    EKS_NAMESPACE: bpm
+    DEPLOYMENT_NAME: bpm-web
+  before_script:
+  - |
+    if [[ "$CI_COMMIT_BRANCH" == "develop" ]]; then
+      EKS_CLUSTER="TEST"
+      EKS_SERVER=$EKS_TEST
+      EKS_CA=$EKS_CA_TEST
+      EKS_TOKEN=$EKS_TOKEN_TEST
+    elif [[ "$CI_COMMIT_BRANCH" == "uat" ]]; then
+      EKS_CLUSTER="UAT"
+      EKS_SERVER=$EKS_UAT
+      EKS_CA=$EKS_CA_UAT
+      EKS_TOKEN=$EKS_TOKEN_UAT
+    fi
+  rules:
+  - if: $CI_COMMIT_BRANCH =~ /^(develop|uat)$/
+    changes: *redeployment
+

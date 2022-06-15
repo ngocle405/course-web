@@ -1,0 +1,77 @@
+// .p-paginator {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-wrap: wrap;
+// }
+// .p-paginator-left-content {
+//   margin-right: auto;
+// }
+// .p-paginator-right-content {
+//   margin-left: auto;
+// }
+// .p-paginator-current,
+// .p-paginator-first,
+// .p-paginator-last,
+// .p-paginator-next,
+// .p-paginator-page,
+// .p-paginator-prev {
+//   cursor: pointer;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   line-height: 1;
+//   -webkit-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   overflow: hidden;
+//   position: relative;
+// }
+// .p-paginator-element:focus {
+//   z-index: 1;
+//   position: relative;
+// }
+// .p-toolbar {
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+// }
+// .p-toolbar,
+// .p-toolbar-group-left,
+// .p-toolbar-group-right {
+//   display: flex;
+//   align-items: center;
+// }
+// .p-fileupload-content {
+//   position: relative;
+// }
+// .p-fileupload-row {
+//   display: flex;
+//   align-items: center;
+// }
+// .p-fileupload-row > div {
+//   flex: 1 1 auto;
+//   width: 25%;
+// }
+// .p-fileupload-row > div:last-child {
+//   text-align: right;
+// }
+// .p-fileupload-content .p-progressbar {
+//   width: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+// .p-button.p-fileupload-choose {
+//   position: relative;
+//   overflow: hidden;
+// }
+// .p-button.p-fileupload-choose input[type='file'],
+// .p-fileupload-choose.p-fileupload-choose-selected input[type='file'] {
+//   display: none;
+// }
+// .p-fluid .p-fileupload .p-button {
+//   width: auto;
+// }
+// .p-fileupload-filename {
+//   word-break: break-all;
+// }

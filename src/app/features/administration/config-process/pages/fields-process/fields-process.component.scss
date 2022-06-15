@@ -1,0 +1,16 @@
+.fields-process-config {
+  .btn-row-action .p-button-icon {
+    font-size: 21px;
+  }
+  .row-field {
+    position: relative;
+    .text-error {
+      position: absolute;
+      left: 0;
+      bottom: -14px;
+    }
+  }
+  .p-datatable .p-datatable-tbody > tr > td {
+    vertical-align: inherit;
+  }
+}
