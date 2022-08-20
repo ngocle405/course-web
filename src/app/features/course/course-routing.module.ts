@@ -4,7 +4,7 @@ import { CourseDescriptionComponent, CourseListComponent } from './pages';
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: CourseListComponent,
   },
   {

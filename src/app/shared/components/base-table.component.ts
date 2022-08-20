@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { Injector, OnDestroy, ChangeDetectorRef, Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserProfileModel } from 'src/app/core/models/user-profile.model';
@@ -35,7 +35,7 @@ export class BaseTableComponent<M> implements OnDestroy {
   protected sessionService!: SessionService;
   protected ref!: ChangeDetectorRef;
   protected commonService!: CommonCategoryService;
-  protected fb: FormBuilder | undefined;
+  protected fb: UntypedFormBuilder | undefined;
   public loadingService!: LoadingService;
 
   stateData: any;
@@ -50,7 +50,7 @@ export class BaseTableComponent<M> implements OnDestroy {
   };
   configAction: ActionConfig | undefined;
   prevParams: any;
-  params: M | FormGroup | undefined;
+  params: M | UntypedFormGroup | undefined;
   fileNameExcel = 'list-data.xlsx';
   subscription: Subscription | undefined;
   subscriptions: Subscription[] = [];
@@ -64,7 +64,7 @@ export class BaseTableComponent<M> implements OnDestroy {
   init() {
     this.messageService = this.injector.get(NotificationMessageService);
     this.dialogService = this.injector.get(DialogService);
-    this.fb = this.injector.get(FormBuilder);
+    this.fb = this.injector.get(UntypedFormBuilder);
     this.router = this.injector.get(Router);
     this.route = this.injector.get(ActivatedRoute);
     this.location = this.injector.get(Location);

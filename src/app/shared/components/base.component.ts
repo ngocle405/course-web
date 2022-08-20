@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { Injector, OnDestroy, ChangeDetectorRef, Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserProfileModel } from 'src/app/core/models/user-profile.model';
@@ -30,7 +30,7 @@ export class BaseComponent implements OnDestroy {
   protected sessionService!: SessionService;
   protected ref!: ChangeDetectorRef;
   protected commonService!: CommonCategoryService;
-  protected fb!: FormBuilder;
+  protected fb!: UntypedFormBuilder;
   protected loadingService!: LoadingService;
   protected refDialog!: DynamicDialogRef;
   protected configDialog!: DynamicDialogConfig;
@@ -46,7 +46,7 @@ export class BaseComponent implements OnDestroy {
   init() {
     this.messageService = this.injector.get(NotificationMessageService);
     this.dialogService = this.injector.get(DialogService);
-    this.fb = this.injector.get(FormBuilder);
+    this.fb = this.injector.get(UntypedFormBuilder);
     this.router = this.injector.get(Router);
     this.route = this.injector.get(ActivatedRoute);
     this.location = this.injector.get(Location);

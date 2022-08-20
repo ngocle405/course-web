@@ -1,39 +1,39 @@
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import * as lodash from 'lodash';
 import { DataTable } from '../models/data-table.model';
 import { FieldType } from './enums';
 
-export function cleanDataForm(formGroup: FormGroup) {
+export function cleanDataForm(formGroup: UntypedFormGroup) {
   const form = formGroup;
   Object.keys(form.controls).forEach((field) => {
     const control = form.get(field);
-    if (control instanceof FormControl && typeof control.value === 'string') {
+    if (control instanceof UntypedFormControl && typeof control.value === 'string') {
       control.setValue(control?.value?.trim(), { emitEvent: false });
-    } else if (control instanceof FormGroup) {
+    } else if (control instanceof UntypedFormGroup) {
       cleanDataForm(control);
-    } else if (control instanceof FormArray) {
+    } else if (control instanceof UntypedFormArray) {
       for (const form of control.controls) {
-        cleanDataForm(form as FormGroup);
+        cleanDataForm(form as UntypedFormGroup);
       }
     }
   });
   return form.getRawValue();
 }
 
-export function validateAllFormFields(formGroup?: FormGroup) {
+export function validateAllFormFields(formGroup?: UntypedFormGroup) {
   if (!formGroup) {
     return;
   }
   Object.keys(formGroup.controls).forEach((field) => {
     const control = formGroup.get(field);
-    if (control instanceof FormControl) {
+    if (control instanceof UntypedFormControl) {
       control.markAsTouched({ onlySelf: true });
       control.markAsDirty({ onlySelf: true });
-    } else if (control instanceof FormGroup) {
+    } else if (control instanceof UntypedFormGroup) {
       validateAllFormFields(control);
-    } else if (control instanceof FormArray) {
+    } else if (control instanceof UntypedFormArray) {
       for (const form of control.controls) {
-        validateAllFormFields(form as FormGroup);
+        validateAllFormFields(form as UntypedFormGroup);
       }
     }
   });
