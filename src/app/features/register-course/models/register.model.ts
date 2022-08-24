@@ -1,4 +1,4 @@
-import { CommonModel } from '@common-category/models/common-category.model';
+
 
 export interface RegisterModel {
   name?: string;
@@ -15,3 +15,9 @@ export interface StateCourse {
   listLevel: CommonModel[];
   listKnow: CommonModel[];
 }
+export interface CommonModel {
+  name: string;
+  value: string;
+}
+
+

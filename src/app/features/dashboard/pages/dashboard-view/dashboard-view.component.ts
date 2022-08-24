@@ -1,4 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
+import { CommonCategoryService } from '@cores/services/common-category.service';
 import { BaseTableComponent } from '@shared/components';
 import { DashboardModel } from '../../models/dashboard.model';
 import { DashboardService } from '../../service/dashboard.service';
@@ -9,17 +10,17 @@ import { DashboardService } from '../../service/dashboard.service';
   styleUrls: ['./dashboard-view.component.scss'],
 })
 export class DashboardViewComponent extends BaseTableComponent<DashboardModel> implements OnInit {
-  constructor(inject: Injector, private service: DashboardService) {
+  constructor(inject: Injector, private service: CommonCategoryService) {
     super(inject, service);
   }
-  teacher: any;
-  GetTeacher() {
-    this.service.get(`teachers`).subscribe((data) => {
-      this.teacher = data;
+  news: any;
+  getNewRecord() {
+    this.service.getNewRecord(`/new-list`).subscribe((data) => {
+      this.news = data;
       console.log(data);
     });
   }
   ngOnInit(): void {
-    //this. GetTeacher();
+    this. getNewRecord();
   }
 }

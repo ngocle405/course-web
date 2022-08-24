@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
-import { EmployeeService } from '@on-leave/services/employee.service';
 
 import { Observable } from 'rxjs';
 import { APP_LOADING } from '../utils/constants';
@@ -13,9 +12,6 @@ import { StreamDataService } from './stream-data.service';
 export class GuardService implements CanActivate {
   constructor(
     private streamData: StreamDataService,
-    private sessionService: SessionService,
-
-    private employeeService: EmployeeService
   ) {}
   canActivate(_route: ActivatedRouteSnapshot, _state: RouterStateSnapshot): Observable<boolean> {
     return new Observable<boolean>((_observable) => {

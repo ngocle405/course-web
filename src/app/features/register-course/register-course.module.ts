@@ -7,6 +7,6 @@ import { RegisterCourseRoutingModule } from './register-course-routing.module';
 @NgModule({
   declarations: [...pages],
   imports: [SharedModule, RegisterCourseRoutingModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class RegisterCourseModule {}

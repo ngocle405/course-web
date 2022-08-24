@@ -39,6 +39,7 @@ import { CardModule } from 'primeng/card';
 import { directives } from './directives';
 import { ImageModule } from 'primeng/image';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const COMPONENTS = [...components, ...layouts];
 const PIPES: never[] = [];
@@ -86,7 +87,7 @@ const MODULES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...MODULES],
+  imports: [CommonModule, ...MODULES,NgxPaginationModule],
   exports: [CommonModule, ...PIPES, ...COMPONENTS, ...DIRECTIVES, ...MODULES],
   declarations: [...COMPONENTS, ...PIPES, ...DIRECTIVES],
   providers: [Location, DynamicDialogRef, DynamicDialogConfig],

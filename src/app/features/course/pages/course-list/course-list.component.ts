@@ -2,7 +2,6 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { CommonCategoryService } from '@cores/services/common-category.service';
 import { BaseComponent, BaseTableComponent } from '@shared/components';
 import { cloneDeep } from 'lodash';
-import { CourseModel } from '../../models/course.model';
 
 @Component({
   selector: 'app-course-list',
@@ -10,15 +9,19 @@ import { CourseModel } from '../../models/course.model';
   styleUrls: ['./course-list.component.scss'],
 })
 export class CourseListComponent extends BaseComponent implements OnInit {
+  totalLength: any;
+  searchText:any;
   constructor(inject: Injector, private service: CommonCategoryService) {
     super(inject);
   }
   stateData: any;
+     p: number = 1;
   getAll() {
     this.loadingService.start();
     this.service.get('/listCourse').subscribe({
       next: (data) => {
         this.stateData = cloneDeep(data);
+        this.totalLength = data;
         setTimeout(() => {
           this.loadingService.complete();
         }, 1000);

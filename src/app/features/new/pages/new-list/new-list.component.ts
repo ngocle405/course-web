@@ -1,7 +1,6 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BaseComponent } from '@shared/components';
 import * as _ from 'lodash';
-import { NewModel } from '../../models/new.model';
 import { NewService } from '../../service/new.service';
 
 @Component({
@@ -13,6 +12,7 @@ export class NewListComponent extends BaseComponent implements OnInit {
   constructor(inject: Injector, private service: NewService) {
     super(inject);
   }
+
   stateData?: any;
   getAll() {
     this.loadingService.start();
@@ -32,5 +32,6 @@ export class NewListComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.loadingService.start();
     this.getAll();
+    this.stateData = _.orderBy(this.stateData, ['createDate'],['asc']);
   }
 }

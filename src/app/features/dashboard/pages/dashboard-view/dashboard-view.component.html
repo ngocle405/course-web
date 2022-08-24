@@ -37,7 +37,7 @@
                   <div class="item active">
                     <div class="views-field views-field-field-banner">
                       <div class="field-content">
-                        <a href="tuyensinh2021/index.html"
+                        <a 
                           ><img
                             typeof="foaf:Image"
                             src="./assets/pages/sites/default/files/1600x640_7.png"
@@ -52,14 +52,14 @@
                   <div class="item">
                     <div class="views-field views-field-field-banner">
                       <div class="field-content">
-                        <a href="https://www.facebook.com/AptechVNLearning/posts/121912899850527"
+                        <a 
                           ><img
                             typeof="foaf:Image"
                             src="./assets/pages/sites/default/files/banner-pc_2_6.png"
                             width="1600"
                             height="640"
                             alt="" /></a
-                        ><a href="https://www.facebook.com/AptechVNLearning/posts/121912899850527"
+                        ><a 
                           ><img
                             typeof="foaf:Image"
                             src="./assets/pages/sites/default/files/banner-mb_2_4.png"
@@ -73,14 +73,14 @@
                   <div class="item">
                     <div class="views-field views-field-field-banner">
                       <div class="field-content">
-                        <a href="thuthachtuduy/index.html"
+                        <a 
                           ><img
                             typeof="foaf:Image"
                             src="./assets/pages/sites/default/files/banner-pc_73.png"
                             width="1600"
                             height="640"
                             alt="" /></a
-                        ><a href="thuthachtuduy/index.html"
+                        ><a 
                           ><img
                             typeof="foaf:Image"
                             src="./assets/pages/sites/default/files/banner-mb_24.png"
@@ -246,101 +246,48 @@
     </section>
     <section id="block-views-slideshow-block-1" class="block block-views block_uu_diem clearfix">
       <div class="container">
-        <h2 class="block-title">6.8 triệu học viên trên Thế giới đã chọn MB Ageas, Vì sao?</h2>
+        <h2 class="block-title">Tin tức </h2>
         <h3></h3>
-        <div class="row">
-          <div class="row">
-            <div class="col-sm-4">
+       
+          <div class="row" >
+            <div class="col-sm-4" *ngFor="let item of news.slice(0, 3);">
               <div class="item-0 item-odd">
                 <div class="views-field views-field-field-slider-images">
                   <div class="field-content">
                     <img
                       typeof="foaf:Image"
-                      src="./assets/pages/sites/default/files/styles/265_175/public/chuong_trinh_hoc_chu_trong_thuc_hanhbdb9.jpg?itok=jjDaHJ0Y"
-                      width="265"
-                      height="175"
-                      alt=""
+                      src="http://localhost:53421/upload/files/{{ item.image }}"
+                     style="padding: 10px;height: 160px;"
                     />
                   </div>
                 </div>
                 <div class="views-field views-field-nothing">
                   <span class="field-content">
-                    <div class="uu_diem_row">
-                      <div class="title">Chương trình học</div>
-                      <div class="row_2">Chú trọng thực hành</div>
-                      <div class="body_caunoi">
-                        <p style="text-align: justify">
-                          Với chương trình học chú trọng thực hành, sinh viên MB Ageas luôn được tạo điều kiện để thực
-                          hiện các dự án thực tế một cách thành thạo, chuyên nghiệp nhất.
-                        </p>
+                    <div class="post_date">Ngày đăng : {{ item.createDate | date: 'dd/MM/yyyy' }}</div>
+                    <div class="de_tai">
+                      <a class="text-overflow-ellipsis" routerLink="/mb-ageas/new/description/{{ item.newId }}">{{
+                        item.title
+                      }}</a>
+                    </div>
+                    <div class="footer_product">
+                      <div class="footer_right pull-right">
+                        <div class="comment">0</div>
+                        <div class="flag"></div>
                       </div>
                     </div>
                   </span>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="item-1 item-even">
-                <div class="views-field views-field-field-slider-images">
-                  <div class="field-content">
-                    <img
-                      typeof="foaf:Image"
-                      src="./assets/pages/sites/default/files/styles/265_175/public/doi_ngu_giang_vien_than_thien_nhiet_tinh5942.jpg?itok=NP-hk2Ku"
-                      width="265"
-                      height="175"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="views-field views-field-nothing">
-                  <span class="field-content">
-                    <div class="uu_diem_row">
-                      <div class="title">Đội ngũ giảng viên</div>
-                      <div class="row_2">Thân thiện, nhiệt tình</div>
-                      <div class="body_caunoi">
-                        <p style="text-align: justify">
-                          Giảng viên là những Chuyên gia hàng đầu Việt Nam và luôn đồng hành cùng sinh viên MB Ageas
-                          trong quá trình học tập và phát triển.
-                        </p>
-                      </div>
-                    </div>
-                  </span>
+                <div>
+                  
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="item-2 item-odd">
-                <div class="views-field views-field-field-slider-images">
-                  <div class="field-content">
-                    <img
-                      typeof="foaf:Image"
-                      src="./assets/pages/sites/default/files/styles/265_175/public/co-so-vat-chat-theo-chuan-quoc-tebd74.jpg?itok=pwqtFqW5"
-                      width="265"
-                      height="175"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="views-field views-field-nothing">
-                  <span class="field-content">
-                    <div class="uu_diem_row">
-                      <div class="title">Cơ sở vật chất</div>
-                      <div class="row_2">theo chuẩn Quốc tế</div>
-                      <div class="body_caunoi" style="font-size: 14px">
-                        <p style="text-align: justify">
-                          Với tiêu chuẩn đào tạo quốc tế, MB Ageas luôn đảm bảo cho học viên không gian học tập, nghiêm
-                          cứu sáng tạo và hiện đại nhất.
-                        </p>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
+            
+            
           </div>
           <br />
           <br />
-        </div>
+       
       </div>
     </section>
 

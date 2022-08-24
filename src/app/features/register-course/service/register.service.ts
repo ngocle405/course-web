@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CommonModel } from '@common-category/models/common-category.model';
 import { BaseService } from '@cores/services/base.service';
 import { CommonCategoryService } from '@cores/services/common-category.service';
 import { environment } from '@env';
 import { catchError, forkJoin, map, Observable, of } from 'rxjs';
+import { CommonModel } from '../models/register.model';
 
 @Injectable({
   providedIn: 'root',
@@ -46,8 +46,7 @@ export class RegisterService extends BaseService {
     };
 
     return forkJoin({
-      getCourseList: this.commonService.getCourseList().pipe(catchError(() => of<CommonModel[]>([]))),
-      // listUserGroup: this.commonService.getUsergroup().pipe(catchError(() => of<RequestModel[]>([]))),
+      getCourseList: this.getCourseList().pipe(catchError(() => of([]))),
     }).pipe(
       map((data: any) => {
         this.state = {
@@ -63,5 +62,8 @@ export class RegisterService extends BaseService {
   }
   override findAll() {
     return this.http.get(`${this.baseUrl}/Homes/new-list`);
+  }
+  getCourseList() {
+    return this.http.get<CommonModel[]>(`${environment.endpoint_url}/Courses`);
   }
 }

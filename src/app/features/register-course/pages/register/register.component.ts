@@ -24,13 +24,13 @@ export class RegisterComponent extends BaseActionComponent implements OnInit {
   }
   newList: any;
   override form = this.fb!.group({
-    name: ['', Validators.required],
+    studentName: ['', Validators.required],
     phone: ['', Validators.required],
     level: ['', Validators.required],
-    companyAddress: ['', Validators.required],
+    workLocation: ['', Validators.required],
     know: ['', Validators.required],
     courseId: ['', Validators.required],
-    note: ['', Validators.required],
+    description: [''],
     email: ['', [Validators.required, Validators.email]],
   });
   ngOnInit(): void {
