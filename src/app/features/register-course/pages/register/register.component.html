@@ -1,3 +1,11 @@
+<section class="w3l-about-breadcrum">
+  <div class="breadcrum-bg py-sm-5 py-4">
+    <div class="container py-lg-3">
+      <h2>Đăng ký</h2>
+      <p><a>Home</a> &nbsp; / &nbsp; Đăng ký</p>
+    </div>
+  </div>
+</section>
 <div class="card">
   <div class="container">
     <div class="grid flex">
@@ -19,35 +27,20 @@
           <div class="col-12" [formGroup]="form">
             <div class="p-field">
               <span class="p-float-label">
-                <input
-                  pInputText
-                  class="p-inputtext-sm"
-                  formControlName="studentName"
-                  
-                />
+                <input pInputText class="p-inputtext-sm" formControlName="studentName" />
                 <label for="float-input">Họ và tên <span class="text-red">*</span></label>
               </span>
             </div>
           </div>
           <div class="col-12" [formGroup]="form">
             <span class="p-float-label">
-              <input
-                pInputText
-                class="p-inputtext-sm"
-                formControlName="phone"
-              
-              />
+              <input pInputText class="p-inputtext-sm" formControlName="phone" />
               <label for="float-input" class="label-input">Số điện thoại <span class="text-red">*</span></label>
             </span>
           </div>
           <div class="col-12" [formGroup]="form">
             <span class="p-float-label">
-              <input
-                pInputText
-                class="p-inputtext-sm"
-                formControlName="email"
-               
-              />
+              <input pInputText class="p-inputtext-sm" formControlName="email" />
               <label for="float-input" class="label-input">Địa chỉ email <span class="text-red">*</span></label>
             </span>
           </div>

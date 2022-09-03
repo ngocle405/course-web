@@ -10,21 +10,16 @@ import { cloneDeep } from 'lodash';
 })
 export class CourseListComponent extends BaseComponent implements OnInit {
   totalLength: any;
-  searchText:any;
+  searchText: any;
   constructor(inject: Injector, private service: CommonCategoryService) {
     super(inject);
   }
   stateData: any;
-     p: number = 1;
   getAll() {
-    this.loadingService.start();
     this.service.get('/listCourse').subscribe({
       next: (data) => {
         this.stateData = cloneDeep(data);
-        this.totalLength = data;
-        setTimeout(() => {
-          this.loadingService.complete();
-        }, 1000);
+        this.loadingService.complete();
       },
       error: (e) => {
         this.loadingService.complete();

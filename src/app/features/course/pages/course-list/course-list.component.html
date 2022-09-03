@@ -1,75 +1,32 @@
-<div class="front_content_3 card">
-  <div class="container">
-    <div class="row">
-      <div class="region region-front-content-3">
-        <section class="block block-views col-sm-12 trien_lam_front clearfix">
-          <h2 class="block-title" style="text-align: center">Khóa học</h2>
-          <div class="block-content">
-            <div
-              class="view view-content-function view-id-content_function view-display-id-block_8 row view-dom-id-391dcb83ab67c786796d1ace2d568077"
-            >
-              <div class="view-header">
-              
-                <h3>Các khóa học tại MB Ageas</h3>
-              </div>
-              <h4 class="heading-tittle font-italic ml-3">
-                <div class="input-group">
-                    <div class="form-outline">
-                        <input type="search" id="form1" autocomplete="off" class="form-control"
-                            [(ngModel)]="searchText" placeholder=" Tìm kiếm tại đây... " />
-                    </div>
-                </div>
-            </h4>
-              <div class="view-content" *ngFor="let item of stateData | paginate: { 
-              itemsPerPage: 6,
-              currentPage: p,
-              totalItems: totalLength.length }">
-                <div class="views-row views-row-1 views-row-odd views-row-first col-md-6 mt-2" style="height: 100%">
-                  <div class="rounded border-radius-style">
-                    <div class="views-field views-field-field-anh-nho-tren-panel">
-                      <div class="field-content">
-                        <a routerLink="/mb-ageas/course/description/{{ item.courseId }}"
-                          ><img
-                            typeof="foaf:Image"
-                            src="http://localhost:53421/upload/files/{{ item.image }}"
-                            style="width: 100%;height: 220px; padding: 10px"
-                        /></a>
-                      </div>
-                    </div>
-                    <div class="views-field views-field-nothing">
-                      <span class="field-content">
-                        <div class="post_date">{{ item.createDate | date: 'dd/MM/yyyy' }}</div>
-                        <div class="de_tai">
-                          <a routerLink="/mb-ageas/course/description/{{ item.courseId }}">{{ item.courseName }}</a>
-                        </div>
-
-                        <div class="link">Giá từ : {{ item.price | currency: 'VND' }}</div>
-                        <div class="footer_product">
-                          <div class="footer_right pull-right">
-                            <div class="comment">0</div>
-                            <div class="flag"></div>
-                          </div>
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <br>
-             
-          
+<section class="w3l-service-breadcrum">
+  <div class="breadcrum-bg py-sm-5 py-4">
+    <div class="container py-lg-3">
+      <h2>Khóa học tại MB ageas IT</h2>
+      <p><a>Home</a> &nbsp; / &nbsp; Khóa học</p>
+    </div>
+  </div>
+</section>
+<section class="w3l-features-8">
+  <!-- /features -->
+  <div class="features py-5" id="services">
+    <div class="container py-md-3">
+      <div class="fea-gd-vv text-center row">
+        <ng-container *ngFor="let item of stateData">
+          <div class="float-top col-lg-4 col-md-6 mt-5">
+            <a routerLink="/mb-ageas/course/description/{{ item.courseId }}"
+              ><img src="http://localhost:53421/upload/files/{{ item.image }}" class="img-responsive"
+            /></a>
+            <div class="float-lt feature-gd">
+              <h3>
+                <a routerLink="/mb-ageas/course/description/{{ item.courseId }}">{{ item.courseName }}</a>
+              </h3>
+              <p>Danh mục : {{ item.courseCategoryName }}</p>
             </div>
-          <div class="mt-5">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <div class="mt-5"></div>
           </div>
-          </div>
-        </section>
-       
-        <section id="block-block-26" class="block block-block col-sm-12 footer_cat clearfix">
-          <h2 class="block-title">Bừng sáng khát vọng thành công cùng MB Ageas</h2>
-          <div class="block-content"><a class="go_front" href="#block-md-slider-md-slider-57457a5e36cb1"></a></div>
-        </section>
+        </ng-container>
       </div>
     </div>
   </div>
-</div>
+  <!-- //features -->
+</section>

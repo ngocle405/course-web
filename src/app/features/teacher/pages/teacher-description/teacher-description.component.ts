@@ -11,18 +11,17 @@ import { TeacherModel } from '../../models/teacher.model';
   styleUrls: ['./teacher-description.component.scss'],
 })
 export class TeacherDescriptionComponent extends BaseTableComponent<TeacherModel> implements OnInit {
-  id: any | null;
+  id?: string | null;
 
   constructor(inject: Injector, service: CommonCategoryService) {
     super(inject, service);
   }
-  items: MenuItem[] = [];
 
-  home!: MenuItem;
   model: TeacherModel = {};
   ngOnInit(): void {
+    this.loadingService.start();
     this.id = this.route?.snapshot.paramMap.get('teacherId');
-    this.viewDetail(this.id);
+    this.viewDetail(this.id!);
   }
   override viewDetail(id: string) {
     this.loadingService.start();

@@ -1,59 +1,32 @@
-<div class="content card">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 mt-8 mb-5">
-        <h2 class="block-title text-center uppercase">Giảng viên</h2>
-        <h3 class="text-center">Đội ngũ Giảng viên là những Chuyên gia CNTT hàng đầu</h3>
-      </div>
-      <div class="region region-content">
-        <section id="block-system-main" class="block block-system clearfix">
-          <div class="block-content">
-            <div
-              class="view view-content-function view-id-content_function view-display-id-page_8 list-views row teacher product-of-st view-dom-id-234d5e71d431c491a3575cdb26127665"
-            >
-              <div class="view-header"></div>
-              <div class="view-content">
-                <div
-                  class="views-row views-row-1 views-row-odd views-row-first col-sm-4"
-                  *ngFor="let item of stateData"
-                >
-                  <div class="p-3 border-radius-style" style="height: 350px;">
-                    <div class="views-field views-field-field-news-image">
-                      <div class="field-content">
-                        <a
-                          ><img
-                            typeof="foaf:Image"
-                            src="http://localhost:53421/upload/files/{{ item.image }}"
-                            style="    height: 120px;"
-                            alt=""
-                        /></a>
-                      </div>
-                    </div>
-                    <div class="views-field">
-                      <span class="field-content">
-                        <div class="name-teacher">
-                          <a routerLink="/mb-ageas/teacher/description/{{ item.teacherId }}"
-                            >Giảng viên :{{ item.teacherName }}</a
-                          >
-                        </div>
-                        <div class="chuyenmon-teacher"><span>Chuyên môn: </span>{{ item.regular }}</div>
-                        <div class="view_more">
-                          <button
-                            class="btn-detail ml-7 mt-2"
-                            routerLink="/mb-ageas/teacher/description/{{ item.teacherId }}"
-                          >
-                            Xem thêm
-                          </button>
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<section class="w3l-service-breadcrum">
+  <div class="breadcrum-bg py-sm-5 py-4">
+    <div class="container py-lg-3">
+      <h2>Giảng viên</h2>
+      <p>Home &nbsp; / &nbsp; Giảng viên</p>
+    </div>
+  </div>
+</section>
+<section class="w3l-features-8">
+  <!-- /features -->
+  <div class="features py-5" id="services">
+    <div class="container py-md-3">
+      <div class="fea-gd-vv text-center row">
+        <ng-container *ngFor="let item of teacherList">
+          <div class="float-top col-lg-4 col-md-6 mt-5">
+            <div class="float-lt feature-gd">
+              <a class="card" routerLink="/mb-ageas/teacher/description/{{ item.teacherId }}"
+                ><img src="http://localhost:53421/upload/files/{{ item.image }}" class="img-responsive"
+              /></a>
+              <h3>
+                <a routerLink="/mb-ageas/teacher/description/{{ item.teacherId }}">{{ item.teacherName }}</a>
+              </h3>
+              <p>Câu nói : {{ item.say || 'Chưa hiển thị' }}</p>
             </div>
+            <div class="mt-5"></div>
           </div>
-        </section>
+        </ng-container>
       </div>
     </div>
   </div>
-</div>
+  <!-- //features -->
+</section>

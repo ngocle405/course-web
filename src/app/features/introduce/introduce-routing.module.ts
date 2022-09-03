@@ -4,7 +4,7 @@ import { IntroduceListComponent } from './page';
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: IntroduceListComponent,
   },
 

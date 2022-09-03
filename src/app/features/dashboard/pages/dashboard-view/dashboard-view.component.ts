@@ -1,8 +1,8 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { CommonCategoryService } from '@cores/services/common-category.service';
 import { BaseTableComponent } from '@shared/components';
-import { DashboardModel } from '../../models/dashboard.model';
-import { DashboardService } from '../../service/dashboard.service';
+import * as _ from 'lodash';
+import { DashboardModel, newModel } from '../../models/dashboard.model';
 
 @Component({
   selector: 'dashboard-view',
@@ -13,14 +13,26 @@ export class DashboardViewComponent extends BaseTableComponent<DashboardModel> i
   constructor(inject: Injector, private service: CommonCategoryService) {
     super(inject, service);
   }
-  news: any;
+  news?: newModel[];
   getNewRecord() {
-    this.service.getNewRecord(`/new-list`).subscribe((data) => {
-      this.news = data;
-      console.log(data);
+    this.service.getNewRecord(`/new-list`).subscribe({
+      next: (value) => {
+        this.news = _.take(value, 3);
+        console.log(this.news);
+
+        this.loadingService.complete();
+      },
+      error: (err) => {
+        console.log(err);
+        this.loadingService.complete();
+      },
     });
   }
   ngOnInit(): void {
-    this. getNewRecord();
+    this.loadingService.start();
+    this.getNewRecord();
+  }
+  viewcourse() {
+    this.router.navigateByUrl('/mb-ageas/course');
   }
 }

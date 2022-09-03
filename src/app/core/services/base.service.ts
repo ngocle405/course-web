@@ -15,7 +15,7 @@ export class BaseService implements BaseData {
   baseUrl!: string;
   state: any;
   get(href: string = '', params: any = {}) {
-    return this.http.get(this.baseURL + `${href}`, {
+    return this.http.get<any>(this.baseURL + `${href}`, {
       params: params,
     });
   }

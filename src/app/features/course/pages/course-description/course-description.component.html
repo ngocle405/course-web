@@ -1,42 +1,42 @@
-<div class="highlighted">
-  <div class="region region-highlighted">
-    <section id="block-custom-about-us" class="block block-custom node_about_us clearfix">
-      <div class="container">
-     
-        <h2 class="block-title">Chi tiết khóa học : {{ model.courseName }}</h2>
-        <div class="block-content" *ngIf="model.image">
-          <div class="row content-about-us">
-            <div class="col-sm-12">
-              <div class="col-md-5 card">
-                <p-image
-                  src="http://localhost:53421/Upload/Files/{{ model.image }}"
-                  alt="http://localhost:53421/Upload/Files/{{ model.image }}"
-                  width="100%"
-                ></p-image>
-                <br />
-                <h5 class="title">{{ model.courseName }} ({{ model.englishName }})</h5>
-                <br />
-                <br>
-                <p class="p-text">{{ model.title }}</p>
+<section class="w3l-about-breadcrum">
+  <div class="breadcrum-bg py-sm-5 py-4">
+    <div class="container py-lg-3">
+      <h2>About Us</h2>
+      <p><a>Home</a> &nbsp; / &nbsp; About</p>
+    </div>
+  </div>
+</section>
+<!-- content-with-photo4 block -->
+<section class="w3l-content-with-photo-4 card">
+  <div id="content-with-photo4-block" class="pt-5">
+    <div class="container py-md-5">
+      <div class="cwp4-two row">
+        <div class="cwp4-text col-lg-6">
+          <h3>Chi tiết khóa học : {{ model.courseName }}</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+          </p>
 
-                <button [routerLink]="['/mb-ageas/dang-ky-khoa-hoc']" pButton target="_blank" label="Đăng ký"></button>
-              </div>
-              <div class="col-md-7 gird">
-                <p>
-                  Mã khóa học: <span style="color: red"> {{ model.code }}</span>
-                </p>
-                <p>Ngày khai giảng: {{ model.startDate | date: 'dd/MM/yyyy' }}</p>
-                <p>Ngày Kết thúc: {{ model.endDate | date: 'dd/MM/yyyy' }}</p>
-                <p>Số buổi học: {{ model.countLesson }}</p>
-                <p>Học phí: {{ model.price | currency: 'VND' }}</p>
-                <p>Danh mục : {{ model.courseCategoryName }}</p>
-                <p>Giáo viện phụ trách : {{ model.teacherName }}</p>
-              </div>
-            </div>
-          </div>
+          <ul class="cont-4">
+            <li><span class="fa fa-check"></span>Ngày khai giảng: {{ model.startDate | date: 'dd/MM/yyyy' }}</li>
+            <li><span class="fa fa-check"></span>Ngày Kết thúc: {{ model.endDate | date: 'dd/MM/yyyy' }}</li>
+            <li><span class="fa fa-check"></span>Số buổi học: {{ model.countLesson }}</li>
+            <li><span class="fa fa-check"></span>Học phí: {{ model.price | currency: 'VND' }}</li>
+            <li><span class="fa fa-check"></span>Danh mục : {{ model.courseCategoryName }}</li>
+            <li><span class="fa fa-check"></span>Giáo viện phụ trách : {{ model.teacherName }}</li>
+          </ul>
+        </div>
+        <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
+          <img src="http://localhost:53421/Upload/Files/{{ model.image }}" class="img-fluid" alt="" />
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<div class="highlighted">
+  <div class="region region-highlighted">
     <section id="block-block-10" class="block block-block loi_ich clearfix card">
       <div class="container">
         <div class="row">
@@ -60,109 +60,38 @@
     </section>
   </div>
 </div>
-<section id="block-views-slideshow-block-1" class="block block-views block_uu_diem clearfix">
-  <div class="container">
-    <h2 class="block-title">6.8 triệu học viên trên Thế giới đã chọn MB Ageas, Vì sao?</h2>
-    <h3></h3>
-    <div class="row">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="item-0 item-odd">
-            <div class="views-field views-field-field-slider-images">
-              <div class="field-content">
-                <img
-                  typeof="foaf:Image"
-                  src="./assets/pages/sites/default/files/styles/265_175/public/chuong_trinh_hoc_chu_trong_thuc_hanhbdb9.jpg?itok=jjDaHJ0Y"
-                  width="265"
-                  height="175"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="views-field views-field-nothing">
-              <span class="field-content">
-                <div class="uu_diem_row">
-                  <div class="title">Chương trình học</div>
-                  <div class="row_2">Chú trọng thực hành</div>
-                  <div class="body_caunoi">
-                    <p style="text-align: justify">
-                      Với chương trình học chú trọng thực hành, sinh viên MB Ageas luôn được tạo điều kiện để thực hiện
-                      các dự án thực tế một cách thành thạo, chuyên nghiệp nhất.
-                    </p>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
+<section class="w3l-feature-2">
+  <div class="grid top-bottom py-5">
+    <div class="container py-md-5">
+      <div class="heading text-center mx-auto">
+        <h3 class="head">Tại sao nên chọn MB ageas IT</h3>
+        <p class="my-3 head">
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla mollis dapibus
+          nunc, ut rhoncus turpis sodales quis. Integer sit amet mattis quam.
+        </p>
+      </div>
+      <div class="middle-section row mt-5 pt-3">
+        <div class="three-grids-columns col-lg-3 col-sm-6 text-center">
+          <div class="icon"><span class="fa fa-graduation-cap" aria-hidden="true"></span></div>
+          <h4>Chú trọng thực hành</h4>
+          <p>hương trình học chú trọng thực hành sinh viên luôn được tiếp cận với dự án thực tế.</p>
         </div>
-        <div class="col-sm-4">
-          <div class="item-1 item-even">
-            <div class="views-field views-field-field-slider-images">
-              <div class="field-content">
-                <img
-                  typeof="foaf:Image"
-                  src="./assets/pages/sites/default/files/styles/265_175/public/doi_ngu_giang_vien_than_thien_nhiet_tinh5942.jpg?itok=NP-hk2Ku"
-                  width="265"
-                  height="175"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="views-field views-field-nothing">
-              <span class="field-content">
-                <div class="uu_diem_row">
-                  <div class="title">Đội ngũ giảng viên</div>
-                  <div class="row_2">Thân thiện, nhiệt tình</div>
-                  <div class="body_caunoi">
-                    <p style="text-align: justify">
-                      Giảng viên là những Chuyên gia hàng đầu Việt Nam và luôn đồng hành cùng sinh viên MB Ageas trong
-                      quá trình học tập và phát triển.
-                    </p>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
+        <div class="three-grids-columns col-lg-3 col-sm-6 mt-sm-0 mt-5 text-center">
+          <div class="icon"><span class="fa fa-user" aria-hidden="true"></span></div>
+          <h4>Đội ngũ giảng viên</h4>
+          <p>Giảng viên là những chuyên gia hàng đầu Việt Nam</p>
         </div>
-        <div class="col-sm-4">
-          <div class="item-2 item-odd">
-            <div class="views-field views-field-field-slider-images">
-              <div class="field-content">
-                <img
-                  typeof="foaf:Image"
-                  src="./assets/pages/sites/default/files/styles/265_175/public/co-so-vat-chat-theo-chuan-quoc-tebd74.jpg?itok=pwqtFqW5"
-                  width="265"
-                  height="175"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="views-field views-field-nothing">
-              <span class="field-content">
-                <div class="uu_diem_row">
-                  <div class="title">Cơ sở vật chất</div>
-                  <div class="row_2">theo chuẩn Quốc tế</div>
-                  <div class="body_caunoi">
-                    <p style="text-align: justify">
-                      Với tiêu chuẩn đào tạo quốc tế, MB Ageas luôn đảm bảo cho học viên không gian học tập, nghiêm cứu
-                      sáng tạo và hiện đại nhất.
-                    </p>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
+        <div class="three-grids-columns col-lg-3 col-sm-6 mt-lg-0 mt-5 text-center">
+          <div class="icon"><span class="fa fa-book" aria-hidden="true"></span></div>
+          <h4>Cơ sở vật chất</h4>
+          <p>Cơ sở vật chất hiện đại theo tiêu chuẩn quốc tế</p>
+        </div>
+        <div class="three-grids-columns col-lg-3 col-sm-6 mt-lg-0 mt-5 text-center">
+          <div class="icon"><span class="fa fa-bed" aria-hidden="true"></span></div>
+          <h4>Tài liệu và sách</h4>
+          <p>Tài liệu học đa dạng phong phú giúp nâng cao trí tuệ cho học viên.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="block-block-11" class="block block-block button clearfix">
-  <div class="container">
-    <h2 class="block-title">Bạn có muốn học cùng chuyên gia CNTT hàng đầu?</h2>
-    <div class="row">
-      <div class="col-sm-12"><a href="#block-webform-client-block-5352" class="button_i_want">Tôi muốn</a></div>
     </div>
   </div>
 </section>

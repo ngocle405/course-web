@@ -1,6 +1,5 @@
 import { Subscription } from 'rxjs';
 import { Injector, OnDestroy, ChangeDetectorRef, Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserProfileModel } from 'src/app/core/models/user-profile.model';
@@ -17,6 +16,7 @@ import { PaginatorModel } from 'src/app/core/models/paginator.model';
 import { ActionConfig } from 'src/app/core/models/action-config.model';
 import { cloneDeep } from 'lodash';
 import { LoadingService } from '@cores/services/loading.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   template: `<ng-content></ng-content>`,

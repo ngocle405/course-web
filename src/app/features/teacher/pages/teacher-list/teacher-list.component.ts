@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { CommonCategoryService } from '@cores/services/common-category.service';
+import { LoadingService } from '@cores/services/loading.service';
 import { BaseTableComponent } from '@shared/components';
 import { cloneDeep } from 'lodash';
 import { MenuItem } from 'primeng/api';
@@ -15,13 +16,15 @@ export class TeacherListComponent extends BaseTableComponent<TeacherModel> imple
   }
 
   ngOnInit(): void {
+    this.loadingService.start();
     this.getState();
   }
+  teacherList: TeacherModel[] | undefined;
   override getAll() {
     this.loadingService.start();
     this.serviceBase.get('/teacher-list').subscribe({
       next: (data) => {
-        this.stateData = cloneDeep(data);
+        this.teacherList = cloneDeep(data);
         this.loadingService.complete();
       },
       error: (e) => {

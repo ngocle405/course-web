@@ -5,7 +5,7 @@ import { TeacherListComponent } from './pages/teacher-list/teacher-list.componen
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: TeacherListComponent,
   },
   {
