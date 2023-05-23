@@ -1,10 +1,9 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { Validators } from '@angular/forms';
-import { CommonCategoryService } from '@cores/services/common-category.service';
-import { validateAllFormFields } from '@cores/utils/common-functions';
+import { cleanDataForm, validateAllFormFields } from '@cores/utils/common-functions';
 import { BaseActionComponent } from '@shared/components';
 import { StateCourse } from '../../models/register.model';
 import { RegisterService } from '../../service/register.service';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -23,7 +22,7 @@ export class RegisterComponent extends BaseActionComponent implements OnInit {
     super(inject, service);
   }
   newList: any;
-  override form = this.fb!.group({
+   formRegister = this.fb!.group({
     studentName: ['', Validators.required],
     phone: ['', Validators.required],
     level: ['', Validators.required],
@@ -42,15 +41,15 @@ export class RegisterComponent extends BaseActionComponent implements OnInit {
     this.loadingService.complete();
   }
   override save() {
-    const data = this.getDataForm();
-    if (this.form?.status === 'VALID') {
+    const data = cleanDataForm(this.formRegister);
+    if (this.formRegister?.status === 'VALID') {
       this.messageService?.confirm().subscribe((isConfirm) => {
         if (isConfirm) {
           this.create(data);
         }
       });
     } else {
-      validateAllFormFields(this.form!);
+      validateAllFormFields(this.formRegister!);
     }
   }
   getNews() {
@@ -68,7 +67,7 @@ export class RegisterComponent extends BaseActionComponent implements OnInit {
     this.loadingService.start();
     this.service.create(data).subscribe({
       next: () => {
-        this.form.reset();
+        this.formRegister.reset();
         this.messageService.success('Đăng ký thành công');
         this.refDialog.close(true);
         this.loadingService.complete();
