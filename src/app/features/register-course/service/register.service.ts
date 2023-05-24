@@ -40,7 +40,7 @@ export class RegisterService extends BaseService {
         { value: 'facebook', name: 'Facebook' },
         { value: 'Báo chí', name: 'Báo chí' },
         { value: 'Diễn đàn', name: 'Diễn đàn' },
-        { value: 'Thư MB ageas', name: 'Thư MB ageas' },
+        { value: 'Thư NgocLe Tech', name: 'Thư NgocLe Tech' },
         { value: 'Khác', name: 'Khác' },
       ],
     };
