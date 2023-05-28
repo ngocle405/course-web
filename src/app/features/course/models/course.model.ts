@@ -1,5 +1,5 @@
 export interface CourseModel {
-  courseId?: string;
+  courseId?: string|null;
   code?: string;
   courseName?: string;
   title?: string;

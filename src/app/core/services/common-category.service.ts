@@ -16,4 +16,5 @@ export class CommonCategoryService extends BaseService {
   getTeacherRecord(href: string = ''): Observable<any> {
     return this.http.get(this.baseURL + `${href}`);
   }
+
 }

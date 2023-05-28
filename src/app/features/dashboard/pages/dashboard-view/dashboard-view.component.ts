@@ -1,6 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { CommonCategoryService } from '@cores/services/common-category.service';
-import { BaseTableComponent } from '@shared/components';
+import { BaseComponent, BaseTableComponent } from '@shared/components';
 import * as _ from 'lodash';
 import { DashboardModel, newModel } from '../../models/dashboard.model';
 
@@ -9,17 +9,15 @@ import { DashboardModel, newModel } from '../../models/dashboard.model';
   templateUrl: './dashboard-view.component.html',
   styleUrls: ['./dashboard-view.component.scss'],
 })
-export class DashboardViewComponent extends BaseTableComponent<DashboardModel> implements OnInit {
+export class DashboardViewComponent extends BaseComponent implements OnInit {
   constructor(inject: Injector, private service: CommonCategoryService) {
-    super(inject, service);
+    super(inject);
   }
   news?: newModel[];
   getNewRecord() {
     this.service.getNewRecord(`/new-list`).subscribe({
       next: (value) => {
         this.news = _.take(value, 3);
-        console.log(this.news);
-
         this.loadingService.complete();
       },
       error: (err) => {

@@ -40,7 +40,7 @@ import { directives } from './directives';
 import { ImageModule } from 'primeng/image';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { CarouselModule } from 'primeng/carousel';
 const COMPONENTS = [...components, ...layouts];
 const PIPES: never[] = [];
 const DIRECTIVES = [...directives];
@@ -84,6 +84,7 @@ const MODULES = [
   CardModule,
   ProgressSpinnerModule,
   ImageModule,
+  CarouselModule
 ];
 
 @NgModule({
