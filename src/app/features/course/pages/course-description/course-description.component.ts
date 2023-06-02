@@ -28,7 +28,6 @@ export class CourseDescriptionComponent extends BaseComponent implements OnInit 
   home!: MenuItem;
   model: CourseModel = {};
   modelRegister = { studentName: null, phone: null, level: null, courseId: '', email: null }
-  id?: any;
   viewCourse(id: string) {
     // if ( this.loadingService.loading) {
     //   return;
@@ -51,8 +50,8 @@ export class CourseDescriptionComponent extends BaseComponent implements OnInit 
   ngOnInit() {
     this.items = [{ label: 'Khóa học' }, { label: 'Chi tiết khóa học' }];
     this.home = { icon: 'pi pi-home', routerLink: '/' };
-    this.id = this.route?.snapshot.paramMap.get('courseId');
-    this.viewCourse(this.id);
+    const id = this.route?.snapshot.paramMap.get('courseId')!;
+    this.viewCourse(id);
     this.serviceRegister.getState().subscribe((data) => {
       this.stateData = data;
     });
