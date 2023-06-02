@@ -32,8 +32,8 @@
       </div>
       <div class="cwp4-two row">
         <div class="cwp4-text col-lg-6">
-          <button pButton type="button" (click)="register()" data-bs-toggle="modal"
-            data-bs-target="#modalIbRanking">Đăng ký tư vấn</button>
+          <button pButton type="button" data-toggle="modal" data-target="#exampleModal">Đăng ký tư
+            vấn</button>
         </div>
 
       </div>
@@ -106,70 +106,74 @@
 </section>
 
 
-
-<div #modal id="modal" class="p-dialog-content">
-  <p-dialog header="Đăng ký tư vấn" class="p-dialog-content " [(visible)]="visible" [style]="{ width: '50vw', height: '300px'  }">
-    <form #form="ngForm" (submit)="save()">
-
-      <div class="mt-2 p-dialog-body grid p-fluid">
-
-        <div class="col-6">
-          <div class="p-field">
-            <span class="p-float-label">
-              <input type="tex" class="p-inputtext-sm" pInputText [(ngModel)]="modelRegister.studentName"
-                name="studentName" />
-              <label for="inputtext">Họ và tên*</label>
-            </span>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <div class="p-field">
-            <span class="p-float-label">
-              <input p-dialog-body type="text" [(ngModel)]="modelRegister.phone" name="phone" class="p-inputtext-sm"
-                pInputText />
-              <label for="inputtext">Điện thoại*</label>
-            </span>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="p-field">
-            <span class="p-float-label">
-              <input p-dialog-body type="text" [(ngModel)]="modelRegister.email" class="p-inputtext-sm" name="email"
-                pInputText />
-              <label for="inputtext">Địa chỉ email *</label>
-            </span>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="p-field">
-            <span class="p-float-label">
-              <p-dropdown
-              [options]="stateData!.listLevel"
-              class="p-inputtext-sm"
-              formControlName="level"
-              optionLabel="name"
-              optionValue="value"
-              [(ngModel)]="modelRegister.level" 
-              name="level"
-              appendTo="body"
-            >
-            </p-dropdown>
-           
-              <label for="inputtext">Level *</label>
-            </span>
-          </div>
-        </div>
-
-
-
-
+<div class="modal fade"  #modal id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Đăng ký tư vấn</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="p-dialog-footer p-p-0 p-mt-3">
-        <button pButton label="Lưu" type="submit" icon="pi pi-check" class="mr-2"></button>
-        <button pButton label="Đóng" type="reset" icon="pi pi-times" class="p-button-danger"></button>
-      </div>
-    </form>
+      <form #form="ngForm" (submit)="save()">
 
-  </p-dialog>
+        <div class="modal-body">
+
+          <div class="mt-2 p-dialog-body grid p-fluid">
+
+            <div class="col-6">
+              <div class="p-field">
+                <span class="p-float-label">
+                  <input type="tex" class="p-inputtext-sm" pInputText [(ngModel)]="modelRegister.studentName"
+                    name="studentName" />
+                  <label for="inputtext">Họ và tên*</label>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="p-field">
+                <span class="p-float-label">
+                  <input p-dialog-body type="text" [(ngModel)]="modelRegister.phone" name="phone" class="p-inputtext-sm"
+                    pInputText />
+                  <label for="inputtext">Điện thoại*</label>
+                </span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-field">
+                <span class="p-float-label">
+                  <input p-dialog-body type="text" [(ngModel)]="modelRegister.email" class="p-inputtext-sm" name="email"
+                    pInputText />
+                  <label for="inputtext">Địa chỉ email *</label>
+                </span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-field">
+                <span class="p-float-label">
+                  <p-dropdown [options]="stateData!.listLevel" class="p-inputtext-sm" formControlName="level"
+                    optionLabel="name" optionValue="value" [(ngModel)]="modelRegister.level" name="level"
+                    appendTo="body">
+                  </p-dropdown>
+
+                  <label for="inputtext">Level *</label>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="p-dialog-footer p-p-0 p-mt-3">
+            <button pButton label="Lưu" type="submit" icon="pi pi-check" class="mr-2"></button>
+            <button pButton label="Đóng" type="reset" icon="pi pi-times" class="p-button-danger"></button>
+          </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
 </div>

@@ -6,7 +6,7 @@ import { CourseModel } from '../../models/course.model';
 import { RegisterService } from 'src/app/features/register-course/service/register.service';
 import { NgForm } from '@angular/forms';
 import { StateCourse } from 'src/app/features/register-course/models/register.model';
-
+//declare var $: any;
 @Component({
   selector: 'app-course-description',
   templateUrl: './course-description.component.html',
@@ -17,6 +17,7 @@ export class CourseDescriptionComponent extends BaseComponent implements OnInit 
     super(inject);
   }
   @ViewChild('form', { static: false }) form!: NgForm;
+  @ViewChild('modal', { static: false }) modal!: ElementRef;
   items: MenuItem[] = [];
   stateData: StateCourse = {
     getCourseList: [],
@@ -25,8 +26,6 @@ export class CourseDescriptionComponent extends BaseComponent implements OnInit 
     listKnow: [],
   };
   home!: MenuItem;
-  visible: boolean = false
-
   model: CourseModel = {};
   modelRegister = { studentName: null, phone: null, level: null, courseId: '', email: null }
   id?: any;
@@ -48,9 +47,7 @@ export class CourseDescriptionComponent extends BaseComponent implements OnInit 
       },
     });
   }
-  register() {
-    this.visible = true;
-  }
+ 
   ngOnInit() {
     this.items = [{ label: 'Khóa học' }, { label: 'Chi tiết khóa học' }];
     this.home = { icon: 'pi pi-home', routerLink: '/' };
@@ -63,13 +60,12 @@ export class CourseDescriptionComponent extends BaseComponent implements OnInit 
   save() {
     this.loadingService.start();
     this.modelRegister.courseId = this.model.courseId!;
-
     this.serviceRegister.create(this.modelRegister).subscribe({
       next: () => {
-        this.form.resetForm();
+        this.modal.nativeElement.querySelector('button.close').click();
         this.messageService.success('Đăng ký thành công');
+        this.form.resetForm();
         this.loadingService.complete();
-        this.visible=false;
       },
       error: (err) => {
         this.messageService.error('Đăng ký không thành công');
@@ -77,5 +73,5 @@ export class CourseDescriptionComponent extends BaseComponent implements OnInit 
       },
     })
     
-  }
+   }
 }
